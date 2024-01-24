@@ -13,3 +13,9 @@ print([w for w in doc[4].lefts])
 doc = nlp(u'A severe storm hit the beach. It started to rain.')
 for sent in doc.sents:
     print([sent[i] for i in range(len(sent))])
+
+# Check if second sentence begins with a pronoun
+doc = nlp(u'A severe storm hit the beach. It started to rain.')
+for i, sent in enumerate(doc.sents):
+    if i==1 and sent[0].pos_=='PRON':
+        print('The second sentence begins with a pronoun.')
