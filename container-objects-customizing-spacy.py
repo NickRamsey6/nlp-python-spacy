@@ -43,3 +43,11 @@ for token in doc:
                 chunk = chunk + w.text + ' '
         chunk = chunk + token.text
         print(chunk)
+# Option 2: use lefts instead of children because words that modify a noun are always leftward syntactic children of the noun
+for token in doc:
+    if token.pos_=='NOUN':
+        chunk=''
+        for w in token.lefts:
+            chunk =  chunk + w.text+ ' '
+        chunk = chunk + token.text
+        print(chunk)
