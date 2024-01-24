@@ -51,3 +51,9 @@ for token in doc:
             chunk =  chunk + w.text+ ' '
         chunk = chunk + token.text
         print(chunk)
+
+# Create lemma for Golden Gate Bridge 
+doc = nlp(u'The Golden Gate Bridge is an iconic landmark in San Francisco.')
+span = doc[1:4]
+lem_id = doc.vocab.strings[span.text]
+print(span.merge(lemma = lem_id))
