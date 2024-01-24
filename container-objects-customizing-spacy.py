@@ -20,10 +20,15 @@ for i, sent in enumerate(doc.sents):
     if i==1 and sent[0].pos_=='PRON':
         print('The second sentence begins with a pronoun.')
 
-# Check last word in sentence for verb
+# Check last word in sentence for verb. Reduce length of sentence by 2 to account for punctuation mark.
 doc = nlp(u'A severe storm hit the beach. It started to rain.')
 counter = 0
 for sent in doc.sents:
     if sent[len(sent)-2].pos_=='VERB':
         counter+=1
 print(counter)
+
+# Access noun_chunks container
+doc = nlp(u'A noun chunk is a phrase that has a noun as its head.')
+for chunk in doc.noun_chunks:
+    print(chunk)
