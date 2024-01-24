@@ -19,3 +19,11 @@ doc = nlp(u'A severe storm hit the beach. It started to rain.')
 for i, sent in enumerate(doc.sents):
     if i==1 and sent[0].pos_=='PRON':
         print('The second sentence begins with a pronoun.')
+
+# Check last word in sentence for verb
+doc = nlp(u'A severe storm hit the beach. It started to rain.')
+counter = 0
+for sent in doc.sents:
+    if sent[len(sent)-2].pos_=='VERB':
+        counter+=1
+print(counter)
