@@ -6,3 +6,5 @@ from wordcloud import WordCloud, STOPWORDS
 # Load text file
 with open('hound.txt') as infile:
     text = infile.read()
+
+# Load image as numpy array
