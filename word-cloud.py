@@ -8,3 +8,11 @@ with open('hound.txt') as infile:
     text = infile.read()
 
 # Load image as numpy array
+mask = np.array(Image.open('holmes.png'))
+
+# Get stop words as a set and add extra words
+stopwords = STOPWORDS
+stopwords.update(['us', 'one', 'will', 'said', 'now', 'well',
+                  'man', 'may', 'little', 'say', 'must', 'way',
+                  'long', 'yet', 'mean', 'put', 'seem', 'asked',
+                  'made', 'half', 'much', 'certainly', 'might', 'came'])
