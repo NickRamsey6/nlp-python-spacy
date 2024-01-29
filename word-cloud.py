@@ -17,6 +17,7 @@ stopwords.update(['us', 'one', 'will', 'said', 'now', 'well',
                   'long', 'yet', 'mean', 'put', 'seem', 'asked',
                   'made', 'half', 'much', 'certainly', 'might', 'came'])
 
+# Generate word cloud
 wc = WordCloud(max_words=500,
                relative_scaling=0.5,
                mask=mask,
@@ -29,3 +30,16 @@ wc = WordCloud(max_words=500,
                colormap='copper').generate(text)
 
 colors = wc.to_array()
+
+# Plot word cloud
+plt.figure()
+plt.title("Chamberlain Hunt Academy Senior Class Presents:\n",
+          fontsize=15, color='brown')
+plt.text(-10, 0, "The Hound of Baskervilles",
+         fontsize=20, fontweight='bold', color='brown')
+plt.suptitle("7:00 pm May 10-12 McComb Auditorium",
+             x=0.52, y=0.095, fontsize=15, color='brown')
+plt.imshow(colors, interpolation="bilinear")
+plt.axis('off')
+plt.show()
+plt.savefig('houndwordcloud.png')
