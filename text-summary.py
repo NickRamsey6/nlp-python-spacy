@@ -31,3 +31,9 @@ def main():
     speech_edit_no_stop = remove_stop_words(speech_edit)
     word_freq = get_word_freq(speech_edit_no_stop)
     sent_scores = score_sentences(speech, word_freq, max_words)
+
+    counts = Counter(sent_scores)
+    summary = counts.most_common(int(num_sents))
+    print("\nSummary:")
+    for i in summary:
+        print(i[0])
