@@ -43,6 +43,12 @@ def remove_stop_words(speech_edit):
     stop_words=set(stopwords.words('english'))
     speech_edit_no_stop = ''
     for word in nltk.word_tokenize(speech_edit):
+        # Use lower case because casing can effect counting One != one
         if word.lower() not in stop_words:
             speech_edit_no_stop += word + ' '
     return speech_edit_no_stop
+
+def get_word_freq(speech_edit_no_stop):
+    """Return a dictionary of word frequencies in a string"""
+    word_freq = nltk.FreqDist(nltk.word_tokenize(speech_edit_no_stop.lower()))
+    return word_freq
