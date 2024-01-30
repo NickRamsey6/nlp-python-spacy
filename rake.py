@@ -10,4 +10,6 @@ def extract_text():
     response = s.get(url)
     return response.html.find('div#article-body', first=True).text
 
-print(extract_text())
+r = Rake()
+r.extract_keywords_from_text(extract_text())
+# print(r.get_ranked_phrases_with_scores())
