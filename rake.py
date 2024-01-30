@@ -12,4 +12,6 @@ def extract_text():
 
 r = Rake()
 r.extract_keywords_from_text(extract_text())
-# print(r.get_ranked_phrases_with_scores())
+for rating, keyword in r.get_ranked_phrases_with_scores():
+    if rating > 5:
+        print(rating, keyword)
