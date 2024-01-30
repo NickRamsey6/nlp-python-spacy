@@ -3,7 +3,6 @@ import re
 import requests
 import bs4
 import nltk
-nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 def main():
