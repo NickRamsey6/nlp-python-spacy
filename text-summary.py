@@ -3,6 +3,7 @@ import re
 import requests
 import bs4
 import nltk
+nltk.download('stopwords')
 from nltk.corpus import stopwords
 
 def main():
@@ -69,5 +70,5 @@ def score_sentences(speech, word_freq, max_words):
             sent_scores[sent] = sent_scores[sent] / sent_word_count
     return sent_scores
 
-if __name__ == ' __main__':
+if __name__ == '__main__':
     main() 
